@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box; /*para evitar el desbordamiento de las cajas unas con otras*/
+    
+}
+a{
+    text-decoration: none; /*quita el subrayado*/
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+.padre{ 
+    display: flex; /*para iniciar flexbpx desde el padre*/
+    flex-flow: column nowrap; /* para mostrar en columnas y para que se adapte al tamanio establecido*/
+}
+.margen-interno{
+    padding: 0 50px;
+}
+    .header{
+        background: url(../../Imagenes/d.jpg);
+        background-position: center; /*centra la imagen*/
+        background-attachment: contain; /*fija la imagen en el contenedor*/
+        background-size: cover;
+        display: flex; /* activar flexbox dentro del header*/
+        flex-flow: column nowrap ;
+    }
+        .menu{
+            background: rgba(0,0,0,.1); /*rgb y un degradado*/
+            display: flex; /*activa dentro del menu y muestra los elementos en horizontal*/
+            flex-flow: row nowrap; /* para mostrar en una misma linea*/
+            height: 60px; /*aumenta el tamanio del menu*/
+            align-items: center; /*centrar todos los hijos que esten dentro del menu*/
+            border-bottom: 1px solid rgba(255,255,255,.5); /*linea blanca divisora del menu*/
+        }
+            .logo{
+                flex: 1 1 auto; /*definir tamanio de los hijos*/
+                
+            }
+                .logo a{ /*dentro del logo y del ancla*/
+                    color: #fff;
+                    font-size: 30px;
+                }
+                .logo a:hover{
+                    color:#343434;
+                }
+            .nav{
+                flex: 5 1 auto; /*definir mayor tamanio(5) para este hijo*/
+            }
+                .nav a{
+                    color: #fff;
+                    font-size: 13px;
+                    text-transform: uppercase; /*mayusculas*/
+                    padding: 0 10px;
+                    letter-spacing: 2px;
+                }
+                .nav a:hover{
+                    color: #343434;
+                }
+
+            .social{
+                flex: 1 1 auto;
+                display: flex;
+            }
+                .social a{
+                    color: #fff;
+                    font-size: 18px;
+                    padding: 0 5px;;
+                }
+                social a:hover{
+                    color: #343434;
+                }
+
+        .texto-principal{
+            /*background: #c70039;*/            
+            height: 580px;
+            display: flex;
+            align-items: center;
+
+        }
+            h1{
+                font-family: 'Lora', serif;
+                font-size: 21px;
+                color: #fff;
+                font-weight: 300;
+                text-align: center;
+                line-height: 1.6;
+            }
+
+    .section{
+        background: #f7f7f7;
+        display: flex; /*inicia flexbox en la section*/
+    }
+        .articulos{
+            background: #f7f7f7;
+            flex: 2 1 auto; /*se fijan las dimensiones, el 2 es para que sea el doble del aside*/
+            display: flex; /*muestra en linea horizontal*/
+            flex-flow: row wrap; /*row los pone uno al lado del otro, wrap hace que si no cabe una caja, la pasa abajo*/
+        }
+            .article{
+                flex: 1 1 40%; /*define las dimensiones de los articulos, se usa 40% para que solo hayan 2 articulos en horizontal y que el resto baje con el WRAP*/
+                color: #444;
+                font-size: 13px;
+                letter-spacing: 1px;
+                margin: 10px 10px 0 0px;
+                flex: 1 1 45%; /*45% para que este a la mitad y comparta espacio con otro articulo*/
+                background: #ececec;
+            }
+            .article img{
+                width: 100%; /*100% de ancho para la imagen*/
+            }
+            .article a{
+                color: #fff;
+                font-size: 13px;
+                padding: 10px;
+                background: #000;
+                margin: 10px 0;
+                display: inline-block; /*lo vuelve bloque y evita que se salga de la caja*/
+            }
+            .article a:hover{
+                background: #546cc3;
+            }
+            h3{
+                color: #fff;
+                font-size: 13px;
+                padding: 10px 0;
+                margin-top: -80px; /*para desplazar arriba, sobre la imagen*/
+            }
+            h2{
+                font-size: 25px;
+                padding: 0 0 10px 0;
+                color: #fff;
+            }
+            .navegacion{
+                background: #000;
+                flex: 1 1 100%; /*define las dimensiones del navegador, se usa 100% en vez de auto para que ocupe esa dimension*/
+                margin: 10px 10px 0 0px;
+            }
+            .navegacion a{
+                color: #fff;
+                font-size: 11px;
+                text-transform: uppercase;
+                padding: 0 10px; /*padding de 0 a los lados, y 10 arriba y abajo*/
+                letter-spacing: 2px;
+            }
+
+        .aside{
+            /*background: #342ead;*/
+            flex: 1 1 auto;
+            margin: 10px 5px 10px 0;
+        }
+            .aside img{
+                width: 100%; /*modifica el tamanio de la imagen del aside*/
+            }
+            h4{
+                background: #000;
+                color: #fff;
+                padding: 10px;
+                text-transform: uppercase; /*mayuscula*/
+            }
+            .publicidad{
+               /* background: #ea6227;*/
+            }
+
+    .footer{
+        background: #000;
+        display: flex; /*activa flex en el padre del pie*/
+        justify-content: center; /*centra todos los hijos*/
+        margin-top: 10px;
+    }
+        .pie{
+            /*background: #2fc4b2;*/
+            /*width: 300px;*/ /*define el ancho*/
+            text-align: center;
+        }
+        .pie a{
+            color: #fff;
+            font-size: 11px;
+            text-transform: uppercase;
+            padding: 0 10px;
+            letter-spacing: 2px;
+        }
+
+@media all and (max-width: 1120px){ /*condiciones de 0px a 800px*/
+    .section{
+        flex-direction: column; /*hace que el aside baje en forma de columna*/
+    }
+    .menu{
+        flex-direction: column; /*muestra el menu en forma de columna*/
+        height: auto; /*ajusta el alto de forma automatica*/
+    }
+    .aside{
+        display: flex; /*muestra la publicidad del aside una al lado de otra*/
+        justify-content: center; /*centra las publicidades*/
+    }
+    h1{
+        font-size: 15px;
+    }
+    .texto-principal{
+        height: 450px;
+    }
+}
+
+@media all and (max-width: 762px){/*condiciones de 0px a 600px*/
+    .articulos{
+        flex-direction: column; /*mostrar articulos en forma de coumna, uno bajo el otro*/
+    }
+}
+@media all and (max-width: 729px){
+    .off{ display: none; }
+    .nav a{ font-size: 25px;}
+}
+@media all and (max-width: 400px){/*condiciones de 0px a 400px*/
+    .aside{
+        flex-direction: column; /*mostrar publicidad en forma de coumna, uno bajo el otro*/
+    }
+}
