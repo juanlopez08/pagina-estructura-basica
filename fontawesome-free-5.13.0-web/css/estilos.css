@@ -182,6 +182,10 @@ body{
         }
 
 @media all and (max-width: 1120px){ /*condiciones de 0px a 800px*/
+    .nav{
+        padding-top: 16px;
+        padding-bottom: 12px;
+    }
     .section{
         flex-direction: column; /*hace que el aside baje en forma de columna*/
     }
@@ -213,5 +217,9 @@ body{
 @media all and (max-width: 400px){/*condiciones de 0px a 400px*/
     .aside{
         flex-direction: column; /*mostrar publicidad en forma de coumna, uno bajo el otro*/
+    }
+    .article p{ padding-top: 5px;}
+    .article h2{
+        font-size: 20px;
     }
 }
