@@ -218,8 +218,23 @@ body{
     .aside{
         flex-direction: column; /*mostrar publicidad en forma de coumna, uno bajo el otro*/
     }
-    .article p{ padding-top: 5px;}
+    .article p{ 
+        padding-top: 5px;
+    }
     .article h2{
         font-size: 20px;
+    }
+
+}
+@media all and (max-width: 365px){
+    .nav a{ 
+        font-size: 20px;
+        padding: 0 5px;
+    }
+    .article p{ 
+        padding-top: 10px;
+    }
+    .article h2{
+        font-size: 15px;
     }
 }
